@@ -622,12 +622,12 @@ h3.my-profession{
         
     }
     .home-img{
-        padding: 30px 60px;
+        padding: 20px 40px;
         
     }
     .home-img::after{
         position: absolute;
-        left: 300px;
+        left: 260px;
         top: 340px;
     }
     .home-img::before{
