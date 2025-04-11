@@ -623,7 +623,7 @@ h3.my-profession{
     }
     .home-img{
         padding: 30px 60px;
-        margin-left: 60px;
+        
     }
     .home-img::after{
         position: absolute;
