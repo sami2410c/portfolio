@@ -126,7 +126,7 @@ ul{
 .aside .logo a span{
     font-family: Lucida Handwriting, cursive;
     color: var(--skin-color);
-    font-size: 40px;
+    font-size: 20px;
 }
 .aside .nav-toggler{
     height: 40px;
@@ -384,7 +384,8 @@ h3.my-profession{
     font-weight: 600;
     color: var(--text-black-900);
     margin-bottom: 40px;  
-    border-bottom: 2px solid var(--bg-black-50);
+    border-bottom: 1px solid;  
+
 }    
 .about .about-content .timeline-box{
     flex: 0 0 100%;
@@ -464,8 +465,8 @@ h3.my-profession{
     padding-bottom: 40px;
 }
 .service .service-item{
-    flex: 0 0 33.33%;
-    max-width: 33.33%;
+    flex: 0 0 50%;
+    max-width: 50%;
     margin-bottom: 30px;
 }
 .service .service-item .service-item-inner
@@ -617,23 +618,11 @@ h3.my-profession{
         max-width: 100%;
     }
     .home .home-img{
-        display: block;
+        display: none;
         margin-top: 100px;
         
     }
-    .home-img{
-        padding: 20px 40px;
-        
-    }
-    .home-img::after{
-        position: absolute;
-        left: 260px;
-        top: 340px;
-    }
-    .home-img::before{
-        position: absolute;
-        left: 10px;
-    }
+    
 }
 
 @media (max-width:767px){
