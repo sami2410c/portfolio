@@ -30,7 +30,7 @@ ul{
     list-style: none;
 }
 .section{
-    background: var(--bg-black-900);
+    background: white;
     min-height: 100vh;
     display: block;
     padding: 0 30px;
@@ -228,6 +228,7 @@ h3.my-profession{
     /* font-weight: 0;
     font-size: 20px; */
     font-family: Lucida Handwriting, cursive;
+    margin-left: 10px;
 }
 .home-info p{
     margin-bottom: 20px;
@@ -253,8 +254,8 @@ h3.my-profession{
     position: absolute;
     height: 80px;
     width: 80px;
-    border-bottom: 7px solid var(--skin-color);
-    border-right: 7px solid var(--skin-color);
+    border-bottom: 7px solid darkorange;
+    border-right: 7px solid darkorange;
     right: 20px;
     bottom: -40px;
 }
@@ -263,8 +264,8 @@ h3.my-profession{
     position: absolute;
     height: 80px;
     width: 80px;
-    border-top: 7px solid var(--skin-color);
-    border-left: 7px solid var(--skin-color);
+    border-top: 7px solid darkorange;
+    border-left: 7px solid darkorange;
     left: 20px;
     top: -40px;
 }
@@ -382,8 +383,8 @@ h3.my-profession{
     font-size: 18px;
     font-weight: 600;
     color: var(--text-black-900);
-    margin-bottom: 40px;    
-
+    margin-bottom: 40px;  
+    border-bottom: 2px solid var(--bg-black-50);
 }    
 .about .about-content .timeline-box{
     flex: 0 0 100%;
@@ -412,7 +413,7 @@ h3.my-profession{
     top: 0;
     height: 100%;
     left: 7px;
-    background-color: red;
+    background:var(--skin-color) ;
 }
 .about .about-content .timeline .circle-dot{
     position: absolute;
@@ -443,6 +444,20 @@ h3.my-profession{
     color: var(--text-black-700);
     text-align: justify;
     font-size: 15px;
+}
+.freash{
+    font-size: 25px;
+    text-transform: uppercase;
+    margin-left: 10px;
+}
+.dot{
+    position: absolute;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    background: var(--skin-color);
+    left: 10px;
+    top: 40px;
 }
 /* service */
 .service .container{
@@ -602,9 +617,25 @@ h3.my-profession{
         max-width: 100%;
     }
     .home .home-img{
-        display: none;
+        display: block;
+        margin-top: 100px;
+        
+    }
+    .home-img{
+        padding: 30px 60px;
+        margin-left: 60px;
+    }
+    .home-img::after{
+        position: absolute;
+        left: 300px;
+        top: 340px;
+    }
+    .home-img::before{
+        position: absolute;
+        left: 10px;
     }
 }
+
 @media (max-width:767px){
     .contact .contact-form .col-6,
     .contact .contact-info-item,
