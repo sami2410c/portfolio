@@ -120,15 +120,26 @@ ul{
 .aside .logo a{
     color: var(--text-black-900);
     font-weight: 800px;
-    letter-spacing: 5px;
+    letter-spacing: 8px;
     font-size: 30px;
     padding: 15px 20px;
     position: relative;
+    left: 12px;
 }
 .aside .logo a span{
     font-family: Lucida Handwriting, cursive;
     color: var(--skin-color);
+    font-size: 25px;
+}
+.aside .logo .developed{
     font-size: 20px;
+    position: relative;
+    left: 30px;
+    letter-spacing: 4px;
+    bottom: 5px;
+    font-weight: 600;
+    font-family: 'Courier New', Courier, monospace;
+
 }
 .aside .nav-toggler{
     height: 40px;
