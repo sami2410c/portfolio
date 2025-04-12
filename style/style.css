@@ -634,8 +634,8 @@ h3.my-profession{
     .home .home-img{
         display: block;   
         position: relative;
-        top: 40px;
-        left: 45px;
+        top: 50px;
+        left: 35px;
         padding-bottom: 50px;
     } 
     .home .home-img::before{
