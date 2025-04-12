@@ -15,6 +15,8 @@
 body{
     line-height: 1.5;
     font-size: 16px;
+    overflow-x: hidden;
+    
 }
 *{
     margin: 0;
@@ -612,21 +614,32 @@ h3.my-profession{
         flex: 0 0 50%;
         max-width: 50%;   
     }
-   
+    
     .home .home-info{
         flex: 0 0 100%;
         max-width: 100%;
-    }
-    .home .home-img{
-        display: none;
-        margin-top: 100px;
         
     }
-    
+    .home .home-img{
+        display: none;        
+    } 
 }
 
-@media (max-width:767px){
+@media (max-width:768px){
     .contact .contact-form .col-6,
+    .contact .contact-info-item,
+    .service .service-item,
+    .about .about-content .education,
+    .about .about-content .experience,
+    .about .about-content .skills,
+    .about .about-content .personal-info{
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
+@media (max-width:400px){
+
+.contact .contact-form .col-6,
     .contact .contact-info-item,
     .service .service-item,
     .about .about-content .education,
