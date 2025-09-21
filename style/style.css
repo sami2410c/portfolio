@@ -86,7 +86,7 @@ ul{
     left: 0;
 }
 .shadow-dark{
-    box-shadow: 0 0 20px rgba(48, 46, 77, 0.15);
+    box-shadow: 0 0 20px rgba(205, 69, 5, 0.15);
 }
 
 .row{
@@ -236,10 +236,7 @@ h3.my-profession{
     
 }
 .typing{
-    color: var(--skin-color);
-    /* font-family:Freestyle Script; */
-    /* font-weight: 0;
-    font-size: 20px; */
+        color: var(--skin-color);
     font-family: Lucida Handwriting, cursive;
     margin-left: 10px;
 }
@@ -345,47 +342,58 @@ h3.my-profession{
     margin-top: 10px;
 
 }
+/* add these to your main stylesheet */
 .about .about-content .skills{
-    flex: 0 0 40%;
-    max-width: 40%;
-    margin-top: 30px;
+  flex: 0 0 40%;
+  max-width: 40%;
+  margin-top: 30px;
 }
+
 .about .about-content .skills .skills-item{
-    flex: 0 0 100%;
-    max-width: 100%;
-    margin-bottom: 30px;
+  flex: 0 0 100%;
+  max-width: 100%;
+  margin-bottom: 30px;
 }
+
 .about .about-content .skills .skills-item h5{
-    line-height: 40px;
-    font-weight: 500;
-    font-size: 17px;
-    color: var(--text-black-700);
-    text-transform: capitalize;
+  line-height: 40px;
+  font-weight: 500;
+  font-size: 17px;
+  color: var(--text-black-700);
+  text-transform: capitalize;
 }
+
 .about .about-content .skills .skills-item .progress{
-    background-color: lightgray;
-    height: 7px;
-    width: 100%;
-    border-radius: 5px;
-    position: relative;
+  background-color: lightgray;
+  height: 2px;
+  width: 100%;
+  border-radius: 5px;
+  position: relative; /* skill-percent absolute will be relative to this */
+  overflow: visible;  /* make sure percent can sit above */
+  padding-top: 10px;  /* space for percent above the bar */
 }
 .about .about-content .skills .skills-item .progress .progress-in{
-    position: absolute;
-    background:var(--skin-color) ;
-    height: 100%;
-    top: 0;
-    left: 0;
-    border-radius: 5px;
+  position: absolute;
+  background: var(--skin-color);
+  height: 100%;
+  top: 0;       /* ab green line bilkul gray ke andar rahegi */
+  left: 0;
+  border-radius: 5px;
+  width: 0;
+  transition: width 1.2s ease-in-out;
 }
+
+
 .about .about-content .skills .skills-item .skill-percent{
-    position: absolute;
-    right: 0;
-    color: var(--skin-color);
-    top: -40px;
-    font-weight: 400;
-    line-height: 40px;
-   
+  position: absolute;
+  left: 0;
+  top: 20px;             /* sits above the bar inside .progress */
+  color: var(--skin-color);
+  font-weight: 700;
+  line-height: 20px;
+  font-size: 15px;
 }
+
 .about .about-content .education,
 .about .about-content .experience{
     flex: 0 0 50%;
@@ -400,10 +408,7 @@ h3.my-profession{
     border-bottom: 1px solid;  
 
 }    
-.about .about-content .timeline-box{
-    flex: 0 0 100%;
-    max-width: 100%;
-}
+
 .about .about-content .timeline{
     background:var(--bg-black-100);
     padding: 30px 20px;
@@ -672,3 +677,32 @@ h3.my-profession{
         max-width: 100%;
     }
 }
+
+
+/* 
+.popup-open{
+    width: 240px;
+    height: 200px;
+    background-color: white;
+    position: relative;
+    top: -250px;
+    left: 230px;
+    border: 2px solid ;
+}
+.lose{
+    border: 1px solid black;
+    border-radius: 2px;
+    position: relative;
+    cursor: pointer;
+    left: 220px;
+}
+.face{
+    color: blue;
+    position: relative;
+    left: 20px;
+}
+.face span{
+    color: black;
+    position: relative;
+    left: 5px;
+} */
