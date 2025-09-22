@@ -1,271 +1,249 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <!-- css file -->
-     <link rel="stylesheet" href="style/style.css">
-     <link rel="stylesheet" href="style/color/color.css">
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mini E‑Commerce Demo</title>
+  <style>
+    :root{--accent:#2b6cb0;--muted:#666}
+    body{font-family:Inter, system-ui, Arial; margin:0; padding:20px; background:#f7fafc}
+    .container{max-width:980px;margin:0 auto}
+    header{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px}
+    h1{font-size:20px;margin:0}
+    .cart-btn{background:var(--accent);color:#fff;padding:8px 12px;border-radius:8px;border:0;cursor:pointer}
+    .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
+    .card{background:#fff;padding:12px;border-radius:10px;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+    .card img{width:100%;height:130px;object-fit:cover;border-radius:8px}
+    .price{font-weight:700}
+    .muted{color:var(--muted);font-size:13px}
+    .footer{margin-top:20px;color:var(--muted);font-size:13px}
 
-     <!-- AOS CSS -->
-     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    /* Cart drawer */
+    .drawer{position:fixed;right:18px;top:70px;width:320px;background:#fff;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,.12);padding:12px;display:none}
+    .drawer.open{display:block}
+    .small{font-size:13px}
+    .qty{display:inline-block;width:28px;text-align:center}
+    .btn{background:var(--accent);color:#fff;padding:8px 10px;border-radius:8px;border:0;cursor:pointer}
+    .secondary{background:#eee;color:#333}
+    input[type=text]{padding:8px;border-radius:6px;border:1px solid #ddd;width:100%}
+    .align{display:flex;gap:8px;align-items:center}
+    .note{font-size:13px;color:#555}
+    .green{color:green}
+  </style>
 </head>
-<body id="body1">
-    <!-- ====== Main Container Start ===== -->
-     <div class="main-container">
-        <!-- ==== Aside start ===== -->
-         <div class="aside">
-           <div class="logo">
-            <a href="#">Fornt<span>End</span></a>
-            <a href="#" class="developed">Developer</a>
-           </div>
-           <div class="nav-toggler">
-            <span></span>
-           </div>
-           <ul class="nav">
-            <li><a href="#home" class="active"><i class="fa fa-home"></i>Home</a></li>
-            <li><a href="#about"><i class="fa fa-user"></i>About</a></li>
-            <li><a href="#service"><i class="fa fa-list"></i>Service</a></li>
-            <li><a href="#contact"><i class="fa fa-comments"></i>Contact</a></li>
-           </ul>
-         </div>
-         <!-- ==== Aside End ===== -->
-          <!-- ==== maincontent Start ==== -->
-           <div class="main-content">
-            <!-- ==== home section start ==== -->
-             <section class="home section" id="home" data-aos="fade-up">
-                <div class="container">
-                  <div class="row">
-                     <div class="home-info" data-aos="fade-up">
-                        <h3 class="hello">Hello, my name is <span class="name">Abdul Sami</span></h3>
-                        <h3 class="my-profession">I' m a<span class="typing"></span></h3>
-                        <p>"Enthusiastic frontend developer with a solid foundation in HTML, CSS, and JavaScript.
-                           Eager to apply my skills in real-world projects and grow within a collaborative team"</p>
-                        <a href="#contact" class="btn hire-me">Hire Me</a>
-                     </div>
-                    
-                     <div class="home-img padd-15" data-aos="fade-up">
-                        <img src="images/port pic.jpg" alt="">
-                     </div>
-                  </div>
-                </div>
-             </section>
-             <!-- ==== Home section End ==== -->
+<body>
+  <div class="container">
+    <header>
+      <h1>Mini E‑Commerce Demo</h1>
+      <div style="display:flex;gap:12px;align-items:center">
+        <div class="muted small">Cart: <span id="cart-count">0</span></div>
+        <button class="cart-btn" id="open-cart">Open Cart</button>
+      </div>
+    </header>
 
-             <!-- ==== About section Start ==== -->
-              <section class="about section" id="about" data-aos="fade-up">
-               <div class="container">
-                  <div class="row">
-                     <div class="section-title padd-15" data-aos="fade-up">
-                        <h2>About Me</h2>
-                     </div>
-                  </div>
-                  <div class="row">
-                     <div class="about-content padd-15" data-aos="fade-up">
-                       <div class="row">
-                        <div class="about-text padd-15" data-aos="fade-up">
-                           <h3>I' m Abdul Sami and<span>Web Developer</span> </h3>
-                           <p>I'm a passionate and detail-oriented front-end developer...</p>
-                        </div>
-                       </div>
-                       <div class="row">
-                        <div class="personal-info padd-15" data-aos="fade-up">
-                           <div class="row">
-                              <div class="info-item padd-15"><p>Birthday : <span>09/Apr/2006</span></p></div>
-                              <div class="info-item padd-15"><p>Age : <span>18+</span></p></div>
-                              <div class="info-item padd-15"><p>Website : <span>sami2410c.github.io/project-imperial</span> <span>sami2410c.github.io/</span></p></div>
-                              <div class="info-item padd-15"><p>Email : <span>samisiddiq8@gmail.com</span></p></div>
-                              <div class="info-item padd-15"><p>Degree : <span>inter</span></p></div>
-                              <div class="info-item padd-15"><p>Phone : <span>+92 3019354472</span></p></div>
-                              <div class="info-item padd-15"><p>City : <span>Karachi</span></p></div>
-                           </div>
-                           <div class="row">
-                              <div class="buttons padd-15" data-aos="fade-up">
-                                 <a href="CV.pdf" download class="btn">Download CV</a>
-                                 <a href="https://www.whatsapp.com/ +92 3019354472" class="btn hire-me">Hire Me</a>
-                              </div>
-                           </div>
-                        </div>
-                        
-                        <div class="skills padd-15" data-aos="fade-up">
-                           <div class="row">
-                              <div class="skills-item padd-15" data-aos="fade-up">
-                                 <h5>HTML</h5>
-                                 <div class="progress">
-                                    <div class="progress-in skills-animation" aria-valuenow="90"></div>
-                                    <div class="skill-percent">90%</div>
-                                 </div>
-                              </div>
-                              <div class="skills-item padd-15" data-aos="fade-up">
-                                 <h5>CSS</h5>
-                                 <div class="progress">
-                                    <div class="progress-in skills-animation" aria-valuenow="86"></div>
-                                    <div class="skill-percent">86%</div>
-                                 </div>
-                              </div>
-                              <div class="skills-item padd-15" data-aos="fade-up">
-                                 <h5>JavaScript</h5>
-                                 <div class="progress">
-                                    <div class="progress-in skills-animation" aria-valuenow="68"></div>
-                                    <div class="skill-percent">68%</div>
-                                 </div>
-                              </div>
-                              <div class="skills-item padd-15" data-aos="fade-up">
-                                 <h5>Bootstrap</h5>
-                                 <div class="progress">
-                                    <div class="progress-in skills-animation" aria-valuenow="70"></div>
-                                    <div class="skill-percent">70%</div>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                       </div> 
-                       <div class="row">
-                           <div class="education padd-15" data-aos="fade-up">
-                              <h3 class="title">Education</h3>
-                              <div class="row">
-                                 <div class="timeline-box padd-15">
-                                    <div class="timeline shadow-dark">
-                                       <div class="timeline-item" data-aos="fade-up">
-                                          <div class="circle-dot"></div>
-                                          <h3 class="timeline-date"><i class="fa fa-calendar"></i> 2023 -2025</h3>
-                                          <h4 class="timeline-title">Inter In Commerce</h4>
-                                          <p class="timeline-text">"Successfully completed Intermediate with a focus on Commerce..."</p>
-                                       </div>
-                                       <div class="timeline-item" data-aos="fade-up">
-                                          <div class="circle-dot"></div>
-                                          <h3 class="timeline-date"><i class="fa fa-calendar"></i> 2023 -2025</h3>
-                                          <h4 class="timeline-title">Matriculation In Science</h4>
-                                          <p class="timeline-text">"Successfully completed Matriculation with a focus on Science..."</p>
-                                       </div>
-                                    </div>
-                                 </div>
-                              </div>
-                           </div>
-                           <div class="experience padd-15" data-aos="fade-up">
-                              <h3 class="title">Experience</h3>
-                           </div>
-                       </div>
-                     </div>
-                  </div>
-               </div>
-              </section>
-              <!-- ==== About section End ==== -->
+    <section>
+      <div class="muted small">Products</div>
+      <div class="grid" id="products"></div>
+    </section>
 
-              <!-- ==== Servicee section Start ==== -->
-              <section class="service section" id="service" data-aos="fade-up">
-                  <div class="container">
-                     <div class="row">
-                        <div class="section-title padd-15"><h2>Services</h2></div>
-                     </div>
-                     <div class="row">
-                         <div class="service-item padd-15" data-aos="fade-up">
-                           <div class="service-item-inner">
-                              <div class="icon"><i class="fa fa-laptop-code"></i></div>
-                              <h4>Front-End Development</h4>
-                              <p>Building responsive, fast, and accessible websites...</p>
-                           </div>
-                         </div>
-                         <div class="service-item padd-15" data-aos="fade-up">
-                           <div class="service-item-inner">
-                              <div class="icon"><i class="fa fa-code"></i></div>
-                              <h4>Web Development</h4>
-                              <p>Developing high-performance websites...</p>
-                           </div>
-                         </div>
-                         <div class="service-item padd-15" data-aos="fade-up">
-                           <div class="service-item-inner">
-                              <div class="icon"><i class="fa fa-search"></i></div>
-                              <h4>SEO Optimization</h4>
-                              <p>Improving website visibility...</p>
-                           </div>
-                         </div>
-                         <div class="service-item padd-15" data-aos="fade-up">
-                           <div class="service-item-inner">
-                              <div class="icon"><i class="fa fa-html5"></i></div>
-                              <h4>HTML Development</h4>
-                              <p>Creating well-structured and semantic HTML pages...</p>
-                           </div>
-                         </div>
-                     </div>
-                  </div>
-                </section>
-                <!-- ==== Servicee section End ==== -->
+    <section style="margin-top:16px">
+      <div class="muted small">Order History</div>
+      <div id="orders"></div>
+    </section>
 
-                <!-- ==== contact section Start ==== -->
-                <section class="contact section" id="contact" data-aos="fade-up">
-                     <div class="container">
-                        <div class="row">
-                           <div class="section-title padd-15"><h2>Contact Me</h2></div>
-                        </div>
-                        <h3 class="contact-title padd-15" data-aos="fade-up">Have You Any Question ?</h3>
-                        <h4 class="contact-sub-title padd-15" data-aos="fade-up">I'M AT YOUR SERVICES</h4>
-                        <div class="row">
-                            <div class="contact-info-item padd-15" data-aos="fade-up">
-                              <div class="icon"><i class="fa fa-phone"></i></div>
-                              <h4>Call Us On</h4>
-                              <p>+92 3019354472</p>
-                            </div>
-                            <div class="contact-info-item padd-15" data-aos="fade-up">
-                              <div class="icon"><i class="fa fa-map-marker-alt"></i></div>
-                              <h4>Office</h4>
-                              <p>Karachi</p>
-                            </div>
-                            <div class="contact-info-item padd-15" data-aos="fade-up">
-                              <div class="icon"><i class="fa fa-envelope"></i></div>
-                              <h4>Email</h4>
-                              <p>samisiddiq8@gmail.com</p>
-                            </div>
-                            <div class="contact-info-item padd-15" data-aos="fade-up">
-                              <div class="icon"><i class="fa fa-globe-europe"></i></div>
-                              <h4>Website</h4>
-                              <p>https://sami2410c.github.io/project-imperial/</p>
-                            </div>
-                        </div>
-                        <h3 class="contact-title padd-15" data-aos="fade-up">SEND ME AN EMAIL</h3>
-                        <h4 class="contact-sub-title padd-15" data-aos="fade-up">I'M VERY RESPONSIVE TO MESSAGE</h4>
-                        <form action="https://api.web3forms.com/submit" method="POST" data-aos="fade-up">
-                           <input type="hidden" name="access_key" value="3f2d61e9-31e7-4ead-8cc1-9871600561f8">
-                         <div class="row">
-                           <div class="contact-form padd-15">
-                              <div class="row">
-                                 <div class="form-item col-6 padd-15"><div class="form-group"><input type="text" class="form-control" placeholder="Name"></div></div> 
-                                 <div class="form-item col-6 padd-15"><div class="form-group"><input type="email" name="email" class="form-control" placeholder="Email"></div></div> 
-                              </div>
-                              <div class="row">
-                                 <div class="form-item col-12 padd-15"><div class="form-group"><input type="text" class="form-control" placeholder="subject"></div></div>
-                              </div>
-                              <div class="row">
-                                 <div class="form-item col-12 padd-15"><div class="form-group"><textarea class="form-control" placeholder="Message"></textarea></div></div>
-                              </div>
-                              <div class="row">
-                                 <div class="form-item col-12 padd-15"><button type="submit" class="btn">Send Message</button></div>
-                              </div>
-                           </div>
-                         </div>
-                        </form>
-                     </div>
-                  </section>
-                  <!-- ==== contact section End ==== -->
-           </div>
-           <!-- ==== maincontent End ==== -->
-     </div>
-     <!-- ====== Main Container End ===== -->
+    <div class="footer">Tips: Coupon <strong>SAVE10</strong> gives 10% off. Payment simulated (JazzCash/EasyPaisa/Card).</div>
+  </div>
 
-     <!-- ===== JS cdn ===== -->
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.1.0/typed.umd.js"></script>
-     <script src="js/script.js"></script>
+  <div class="drawer" id="cart-drawer">
+    <h3 style="margin:0 0 8px 0">Your Cart</h3>
+    <div id="cart-items"></div>
+    <div style="margin-top:8px">
+      <label class="small">Coupon code</label>
+      <input type="text" id="coupon" placeholder="Enter coupon (SAVE10)" />
+      <div style="margin-top:8px;display:flex;gap:8px">
+        <button class="btn" id="apply-coupon">Apply</button>
+        <button class="secondary" id="clear-coupon">Clear</button>
+      </div>
+    </div>
 
-     <!-- AOS JS -->
-     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-     <script>
-       AOS.init({
-         duration: 1000,
-         once: true
-       });
-     </script>
+    <div style="margin-top:10px" id="summary"></div>
+
+    <div style="margin-top:10px">
+      <label class="small">Shipping Address</label>
+      <input type="text" id="address" placeholder="Your address" />
+    </div>
+
+    <div style="margin-top:10px;display:flex;gap:8px;align-items:center">
+      <select id="payment">
+        <option>JazzCash</option>
+        <option>EasyPaisa</option>
+        <option>Card</option>
+      </select>
+      <button class="btn" id="checkout">Checkout</button>
+    </div>
+
+    <div style="margin-top:8px;text-align:right">
+      <button class="secondary" id="close-cart">Close</button>
+    </div>
+  </div>
+
+  <script>
+    // Sample products with inventory
+    const products = [
+      {id:1,name:'Classic Sneakers',price:3500,stock:5, img:'https://picsum.photos/seed/s1/400/300'},
+      {id:2,name:'Denim Jacket',price:4800,stock:3, img:'https://picsum.photos/seed/s2/400/300'},
+      {id:3,name:'Wireless Headset',price:6200,stock:2, img:'https://picsum.photos/seed/s3/400/300'},
+      {id:4,name:'Sunglasses',price:1299,stock:8, img:'https://picsum.photos/seed/s4/400/300'}
+    ];
+
+    // Runtime state
+    let cart = JSON.parse(localStorage.getItem('mini_cart')||'[]');
+    let orders = JSON.parse(localStorage.getItem('mini_orders')||'[]');
+    let activeCoupon = null;
+
+    // Render products
+    function renderProducts(){
+      const container = document.getElementById('products');
+      container.innerHTML='';
+      products.forEach(p=>{
+        const el = document.createElement('div'); el.className='card';
+        el.innerHTML = `
+          <img src="${p.img}" alt="${p.name}" />
+          <h4>${p.name}</h4>
+          <div class="muted">Stock: <span id="stock-${p.id}">${p.stock}</span></div>
+          <div class="price">Rs ${p.price}</div>
+          <div style="margin-top:8px;display:flex;gap:8px">
+            <button ${p.stock===0? 'disabled' : ''} onclick="addToCart(${p.id})" class="btn">Add to cart</button>
+            <button class="secondary" onclick="quickView(${p.id})">Quick view</button>
+          </div>
+        `;
+        container.appendChild(el);
+      });
+      updateCartCount();
+    }
+
+    function quickView(id){
+      const p = products.find(x=>x.id===id);
+      alert(p.name + '\n\nPrice: Rs ' + p.price + '\nStock: ' + p.stock);
+    }
+
+    function addToCart(id){
+      const p = products.find(x=>x.id===id);
+      if(!p || p.stock<=0){ alert('Out of stock'); return; }
+      const existing = cart.find(c=>c.id===id);
+      if(existing){
+        if(existing.qty < p.stock){ existing.qty++; }
+        else { alert('No more stock'); return; }
+      } else { cart.push({id:p.id,name:p.name,price:p.price,qty:1}); }
+      saveCart();
+      renderCart();
+    }
+
+    function saveCart(){ localStorage.setItem('mini_cart', JSON.stringify(cart)); updateCartCount(); }
+    function updateCartCount(){ document.getElementById('cart-count').innerText = cart.reduce((s,c)=>s+c.qty,0); }
+
+    // Cart drawer
+    const drawer = document.getElementById('cart-drawer');
+    document.getElementById('open-cart').onclick = ()=>{ drawer.classList.add('open'); renderCart(); }
+    document.getElementById('close-cart').onclick = ()=>{ drawer.classList.remove('open'); }
+
+    function renderCart(){
+      const list = document.getElementById('cart-items');
+      list.innerHTML='';
+      if(cart.length===0){ list.innerHTML = '<div class="muted">Cart is empty</div>'; renderSummary(); return; }
+      cart.forEach(item=>{
+        const row = document.createElement('div'); row.style.marginBottom='8px';
+        row.innerHTML = `
+          <div style="display:flex;justify-content:space-between;align-items:center">
+            <div>
+              <div><strong>${item.name}</strong></div>
+              <div class="small">Rs ${item.price} x ${item.qty}</div>
+            </div>
+            <div style="text-align:right">
+              <div class="align">
+                <button class="secondary" onclick="changeQty(${item.id}, -1)">-</button>
+                <div class="qty">${item.qty}</div>
+                <button class="secondary" onclick="changeQty(${item.id}, 1)">+</button>
+              </div>
+              <div style="margin-top:6px"><button class="secondary" onclick="removeItem(${item.id})">Remove</button></div>
+            </div>
+          </div>
+        `;
+        list.appendChild(row);
+      });
+      renderSummary();
+    }
+
+    function changeQty(id, delta){
+      const p = products.find(x=>x.id===id);
+      const it = cart.find(c=>c.id===id);
+      if(!it) return;
+      const next = it.qty + delta;
+      if(next<=0) { removeItem(id); return; }
+      if(next>p.stock){ alert('Stock limit'); return; }
+      it.qty = next; saveCart(); renderCart();
+    }
+    function removeItem(id){ cart = cart.filter(c=>c.id!==id); saveCart(); renderCart(); }
+
+    function renderSummary(){
+      const el = document.getElementById('summary');
+      const subtotal = cart.reduce((s,c)=>s + c.price*c.qty,0);
+      const discount = activeCoupon==='SAVE10' ? subtotal*0.10 : 0;
+      const total = subtotal - discount;
+      el.innerHTML = `
+        <div class="small">Subtotal: Rs ${subtotal.toFixed(0)}</div>
+        <div class="small">Discount: Rs ${discount.toFixed(0)}</div>
+        <div style="font-weight:700;margin-top:6px">Total: Rs ${total.toFixed(0)}</div>
+      `;
+    }
+
+    document.getElementById('apply-coupon').onclick = ()=>{
+      const code = document.getElementById('coupon').value.trim();
+      if(code==='SAVE10'){ activeCoupon='SAVE10'; alert('Coupon applied: 10% off'); } else { alert('Invalid coupon'); activeCoupon=null; }
+      renderSummary();
+    }
+    document.getElementById('clear-coupon').onclick = ()=>{ activeCoupon=null; document.getElementById('coupon').value=''; renderSummary(); }
+
+    // Checkout
+    document.getElementById('checkout').onclick = ()=>{
+      if(cart.length===0){ alert('Cart empty'); return; }
+      const addr = document.getElementById('address').value.trim();
+      if(!addr){ alert('Enter address'); return; }
+      // reduce stock
+      for(const it of cart){
+        const p = products.find(x=>x.id===it.id);
+        if(it.qty > p.stock){ alert('Stock changed, adjust cart'); return; }
+        p.stock -= it.qty;
+        document.getElementById('stock-'+p.id).innerText = p.stock;
+      }
+      // create order
+      const subtotal = cart.reduce((s,c)=>s + c.price*c.qty,0);
+      const discount = activeCoupon==='SAVE10' ? subtotal*0.10 : 0;
+      const total = subtotal - discount;
+      const order = { id: 'ORD' + Date.now(), items:cart, total:total, address:addr, payment:document.getElementById('payment').value, status:'Processing', date:new Date().toISOString() };
+      orders.push(order); localStorage.setItem('mini_orders', JSON.stringify(orders));
+      // clear cart
+      cart = []; saveCart(); renderProducts(); renderCart(); renderOrders(); drawer.classList.remove('open');
+      alert('Order placed! ID: ' + order.id + '\nPayment method: ' + order.payment + '\n(Delivery simulated)');
+    }
+
+    // Orders
+    function renderOrders(){
+      const el = document.getElementById('orders');
+      el.innerHTML='';
+      if(orders.length===0){ el.innerHTML='<div class="muted">No past orders</div>'; return; }
+      orders.slice().reverse().forEach(o=>{
+        const d = document.createElement('div'); d.className='card'; d.style.marginTop='8px';
+        d.innerHTML = `<div style="display:flex;justify-content:space-between"><div><strong>${o.id}</strong><div class="muted small">${new Date(o.date).toLocaleString()}</div></div><div class="green">${o.status}</div></div><div class="small" style="margin-top:6px">Total: Rs ${o.total.toFixed(0)}</div>`;
+        d.onclick = ()=>{ alert('Order '+o.id + '\nStatus: ' + o.status + '\nItems: ' + o.items.map(i=>i.name+' x'+i.qty).join(', ')); };
+        el.appendChild(d);
+      });
+    }
+
+    // Initialize
+    renderProducts(); renderCart(); renderOrders();
+    
+  </script>
+  
 </body>
 </html>

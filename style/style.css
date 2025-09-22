@@ -380,7 +380,7 @@ h3.my-profession{
   left: 0;
   border-radius: 5px;
   width: 0;
-  transition: width 1.2s ease-in-out;
+  transition: width 1.9s ease-in-out;
 }
 
 
@@ -659,7 +659,8 @@ h3.my-profession{
     .about .about-content .education,
     .about .about-content .experience,
     .about .about-content .skills,
-    .about .about-content .personal-info{
+    .about .about-content .personal-info,
+    .project .proimg{
         flex: 0 0 100%;
         max-width: 100%;
     }
@@ -672,37 +673,77 @@ h3.my-profession{
     .about .about-content .education,
     .about .about-content .experience,
     .about .about-content .skills,
-    .about .about-content .personal-info{
+    .about .about-content .personal-info,
+    .proimg{
         flex: 0 0 100%;
         max-width: 100%;
     }
 }
 
 
-/* 
-.popup-open{
-    width: 240px;
-    height: 200px;
-    background-color: white;
-    position: relative;
-    top: -250px;
-    left: 230px;
-    border: 2px solid ;
+
+
+
+.project {
+  display: flex;
+  flex-wrap: wrap; /* images next line pe aa sakti hain */
 }
-.lose{
-    border: 1px solid black;
-    border-radius: 2px;
-    position: relative;
-    cursor: pointer;
-    left: 220px;
+
+.proimg {
+  flex: 0 0 50%;   /* har image 50% width le */
+  max-width: 50%;
+  padding: 10px;   /* thoda gap ke liye optional */
 }
-.face{
-    color: blue;
-    position: relative;
-    left: 20px;
+
+
+.proimg .img-box {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
 }
-.face span{
-    color: black;
-    position: relative;
-    left: 5px;
-} */
+
+.proimg img {
+  width: 100%;
+  height: 300px;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+/* image zoom thoda */
+.proimg:hover img {
+  transform: scale(1.1);
+}
+
+/* overlay setup */
+.proimg .overlay {
+  position: absolute;
+  bottom: -100%; /* neeche chhupao */
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: bottom 0.7s ease;
+}
+
+/* icon styling */
+.proimg .overlay a {
+  color: #fff;
+  font-size: 18px;
+  background: #ff4b2b;
+  padding: 12px 14px;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+.proimg .overlay a:hover {
+  background: #ff6a3d;
+}
+
+/* hover par overlay upar aye */
+.proimg:hover .overlay {
+  bottom: 0;
+}
+
