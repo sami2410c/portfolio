@@ -71,6 +71,31 @@ document.addEventListener('DOMContentLoaded', function(){
 
 
 
+
+
+  // jab page load ho
+  // toogle btn
+ document.addEventListener("DOMContentLoaded", function(){
+    const toggler = document.querySelector(".nav-toggler");
+    const aside = document.querySelector(".aside");
+    const navLinks = document.querySelectorAll(".nav li a");
+
+    // toggle button
+    toggler.addEventListener("click", function(){
+      aside.classList.toggle("active");
+    });
+
+    // jab kisi bhi link pe click hoga tu menu khud close ho jaye ga
+    navLinks.forEach(link => {
+      link.addEventListener("click", function(){
+        aside.classList.remove("active");
+      });
+    });
+  });
+
+
+
+
 /* =============================== popup box =========================================*/
 
 

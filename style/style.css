@@ -109,7 +109,8 @@ ul{
     align-items: center;
     padding: 30px;
     height: 100%;
-    z-index: 10;
+     transition: left 0.3s ease; /* smooth slide */
+  z-index: 2000; /* sab ke upar */
 }
 .aside .logo{
     position: absolute;
@@ -146,7 +147,6 @@ ul{
     width: 45px;
     border: 1px solid var(--bg-black-50);
     cursor: pointer;
-    position: fixed;
     left: 300px;
     top: 20px;
     display: none;
@@ -158,7 +158,7 @@ ul{
 .aside .nav-toggler span{
     height: 2px;
     width: 18px;
-    background: var(--skin-color);
+    background-color:black ;
     display: inline-block;
     position: relative;
 }
@@ -166,7 +166,7 @@ ul{
     content: '';
     height: 2px;
     width: 18px;
-    background: var(--skin-color);
+    background-color: black;
     position: absolute;
     top: -6px;
     left: 0;
@@ -176,7 +176,7 @@ ul{
     content: '';
     height: 2px;
     width: 18px;
-    background: var(--skin-color);
+    background-color: black;
     position: absolute;
     top: 6px;
     left: 0;
@@ -612,9 +612,23 @@ h3.my-profession{
 }
 
 @media (max-width:1199px){
-    .aside{
-        left: -270px;
-    }
+    .aside {
+    left: -270px;  /* hidden by default */
+  }
+  .aside.active {
+    left: 0; /* toggle hone par show */
+  }
+  .aside .nav {
+    margin-top: 150px;
+
+  }
+  .aside .nav-toggler {
+    display: flex;
+    position: absolute;
+    top: 20px;
+    right: -50px;  /* sidebar ke bahar dikhane ke liye */
+    z-index: 2100;
+  }
     .main-content{
         padding: 0;
     }
@@ -651,6 +665,7 @@ h3.my-profession{
 
     }
 }
+
 
 @media (max-width:768px){
     .contact .contact-form .col-6,
